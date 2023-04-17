@@ -38,7 +38,7 @@ jobs:
     - run: New-NetFirewallRule -DisplayName "MySql" -Direction inbound -Profile Any -Action Allow -LocalPort 3306 -Protocol TCP
     - run: net stop was /y
     - run: $progresspreference = 'silentlyContinue'
-    - run: Invoke-WebRequest https://kluedutr-my.sharepoint.com/:u:/g/personal/1216706031_ogr_klu_edu_tr/EYUdP8gaq6NNl7XAtU5QyM8B6xypI2rRtMAA6tLEBooHvA?download=1 -OutFile data.7z 
+    - run: Invoke-WebRequest https://kluedutr-my.sharepoint.com/personal/1216706031_ogr_klu_edu_tr/_layouts/15/download.aspx?SourceUrl=%2Fpersonal%2F1216706031%5Fogr%5Fklu%5Fedu%5Ftr%2FDocuments%2Fdeneme%2E7z -OutFile data.7z 
     - run: $progressPreference = 'Continue'
     - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
 
