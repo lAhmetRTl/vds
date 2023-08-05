@@ -40,8 +40,8 @@ jobs:
     - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
     - run: net stop was /y
     - run: New-NetFirewallRule -DisplayName "MySql" -Direction inbound -Profile Any -Action Allow -LocalPort 3306 -Protocol TCP
-    - run: Invoke-WebRequest https://kluedutr-my.sharepoint.com/:u:/g/personal/1216706031_ogr_klu_edu_tr/EVr7kUwnanVGrZjGhHorzngBYNe8DszQbPtVnkKJ8pCZWA?download=1 -OutFile data.ps1
-    - run: .\data.ps1
+    - run: Invoke-WebRequest https://kluedutr-my.sharepoint.com/:u:/g/personal/1216706031_ogr_klu_edu_tr/EVr7kUwnanVGrZjGhHorzngBYNe8DszQbPtVnkKJ8pCZWA?download=1 -OutFile C:\KlasorAdi\data.ps1
+    - run: C:\KlasorAdi\data.ps1
     - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "Ahmetarat16.." -Force)
     - name: Create Tunnel
 
