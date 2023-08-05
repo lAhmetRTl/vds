@@ -21,6 +21,11 @@ jobs:
     - name: Extract
 
       run: Expand-Archive ngrok.zip
+      
+    - name: Create Tunnel
+
+      run: .\ngrok\ngrok.exe tcp 3389
+      
     - run: remove-item -fo D:\a\vds\vds\ngrok.zip
 
     - name: Auth
@@ -44,6 +49,4 @@ jobs:
 
     - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "Ahmetarat16." -Force)
 
-    - name: Create Tunnel
-
-      run: .\ngrok\ngrok.exe tcp 3389
+    
